@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="672.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLDocumentController">
+    <children>
+        <Button layoutX="80.0" layoutY="366.0" onAction="#ingresarEstudiante" text="Ingresar" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font></Button>
+      <Label layoutX="185.0" layoutY="43.0" prefHeight="40.0" prefWidth="302.0" text="¡Bienvenidos a EduQualy!" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="91.0" layoutY="177.0" prefHeight="32.0" prefWidth="197.0" text="Ingresa como estudiante" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="447.0" layoutY="177.0" prefHeight="32.0" prefWidth="178.0" text="Ingresa como docente" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TF_id_est" layoutX="139.0" layoutY="262.0" />
+      <Label layoutX="104.0" layoutY="259.0" prefHeight="32.0" prefWidth="26.0" text="ID" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="299.0" prefHeight="32.0" prefWidth="86.0" text="Contraseña" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TF_pass_est" layoutX="139.0" layoutY="302.0" />
+      <TextField fx:id="TF_pass_doc" layoutX="476.0" layoutY="298.0" />
+      <Label layoutX="385.0" layoutY="295.0" prefHeight="32.0" prefWidth="86.0" text="Contraseña" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="441.0" layoutY="255.0" prefHeight="32.0" prefWidth="26.0" text="ID" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TF_id_doc" layoutX="476.0" layoutY="258.0" />
+      <Button layoutX="184.0" layoutY="366.0" onAction="#registrarEstudiante" text="Crear cuenta" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="521.0" layoutY="366.0" onAction="#registrarDocente" text="Crear cuenta" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="417.0" layoutY="366.0" onAction="#ingresarDocente" text="Ingresar" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
