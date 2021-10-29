@@ -5,6 +5,7 @@
  */
 package controladorinterfaz;
 
+import BaseDatos.javaMysql;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -51,6 +52,17 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void registrarDocente(ActionEvent event) {
         
+    }
+    
+    @FXML
+    private void conectarBD(ActionEvent event) {
+        javaMysql mysql = new javaMysql();
+        mysql.conectar();
+    }
+    
+    @FXML
+    private void salirVentana1(ActionEvent event) {
+        System.exit(0);
     }
     
     @Override
