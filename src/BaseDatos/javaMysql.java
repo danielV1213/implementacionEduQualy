@@ -19,7 +19,7 @@ public class javaMysql {
     public Connection conectar() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "root1242");
+            conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "serperior27");
             JOptionPane.showMessageDialog(null, "Conexión exitosa ", "Conexión", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Conexión fallida " + e, "Conexión", JOptionPane.ERROR_MESSAGE);
