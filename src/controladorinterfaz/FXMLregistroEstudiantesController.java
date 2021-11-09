@@ -53,7 +53,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
     @FXML
     private TextField tf_ocupacion;
-    
+
     @FXML
     private TextField tf_fechaNac;
 
@@ -77,6 +77,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
     @FXML
     private void esSeleccionado(ActionEvent event) {
+        /*
         if (rBPrimaria.isSelected()) {
             labelSeleccion.setText(rBPrimaria.getText());
         } else if (rBSecundaria.isSelected()) {
@@ -85,7 +86,20 @@ public class FXMLregistroEstudiantesController implements Initializable {
             labelSeleccion.setText(rBTec.getText());
         } else if (rBPro.isSelected()) {
             labelSeleccion.setText(rBPro.getText());
-        }
+        }*/
+    }
+
+    @FXML
+    private void limpiarCampos(ActionEvent event) {
+        
+        tf_nombres.setText("");
+        tf_apellidos.setText("");
+        tf_id.setText("");
+        tf_edad.setText("");
+        tf_genero.setText("");
+        tf_ocupacion.setText("");
+        labelSeleccion.setText("");
+        tf_fechaNac.clear(); //Revisar
     }
 
     @FXML
@@ -111,27 +125,30 @@ public class FXMLregistroEstudiantesController implements Initializable {
             int edad = Integer.parseInt(tf_edad.getText());
             String gen = tf_genero.getText();
             String ocupacion = tf_ocupacion.getText();
-            String nivel_ac = labelSeleccion.getText();
+            String nivel_ac = "";
+
+            if (rBPrimaria.isSelected()) {
+                nivel_ac = rBPrimaria.getText();
+            } else if (rBSecundaria.isSelected()) {
+                nivel_ac = rBSecundaria.getText();
+            } else if (rBTec.isSelected()) {
+                nivel_ac = rBTec.getText();
+            } else if (rBPro.isSelected()) {
+                nivel_ac = rBPro.getText();
+            }
+
             String fecha_nac = tf_fechaNac.getText();
 
             String sqlString = "insert into registro_estudiantes"
                     + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, OCUPACIÓN, NIVEL_AC, FECHA_NAC)"
-                    + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + ocupacion + "', '" + nivel_ac +"','"+fecha_nac+"')";
+                    + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + ocupacion + "', '" + nivel_ac + "','" + fecha_nac + "')";
 
-            st.executeUpdate(sqlString); 
+            st.executeUpdate(sqlString);
         } catch (ClassNotFoundException evt) {
             System.err.println(evt);
         } catch (SQLException sqle) {
             System.err.println(sqle);
         }
-        
-        tf_nombres.setText("");
-        tf_apellidos.setText("");
-        tf_id.setText("");
-        tf_edad.setText("");
-        tf_genero.setText("");
-        tf_ocupacion.setText("");
-        labelSeleccion.setText("");
     }
 
     @FXML

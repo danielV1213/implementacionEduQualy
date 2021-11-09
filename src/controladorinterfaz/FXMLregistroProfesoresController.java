@@ -77,7 +77,8 @@ public class FXMLregistroProfesoresController implements Initializable {
 
     @FXML
     private void esSeleccionado(ActionEvent event) {
-        if (rBPrimaria.isSelected()) {
+        
+        /*if (rBPrimaria.isSelected()) {
             labelSeleccion.setText(rBPrimaria.getText());
         } else if (rBSecundaria.isSelected()) {
             labelSeleccion.setText(rBSecundaria.getText());
@@ -85,7 +86,18 @@ public class FXMLregistroProfesoresController implements Initializable {
             labelSeleccion.setText(rBTec.getText());
         } else if (rBPro.isSelected()) {
             labelSeleccion.setText(rBPro.getText());
-        }
+        }*/
+    }
+    
+    @FXML
+    private void limpiarEstudiantes(ActionEvent event) {
+        tf_nombres.setText("");
+        tf_apellidos.setText("");
+        tf_id.setText("");
+        tf_edad.setText("");
+        tf_genero.setText("");
+        tf_areaacademica.setText("");
+        tf_fechaNac.setText("");
     }
 
     @FXML
@@ -111,11 +123,23 @@ public class FXMLregistroProfesoresController implements Initializable {
             int edad = Integer.parseInt(tf_edad.getText());
             String gen = tf_genero.getText();
             String areaacademica = tf_areaacademica.getText();
-            String nivel_ac = labelSeleccion.getText();
+            String nivel_ac = "";
+            
+            if(rBPrimaria.isSelected()){
+                nivel_ac = rBPrimaria.getText();
+            }else if(rBSecundaria.isSelected()){
+                nivel_ac = rBSecundaria.getText();
+            }else if(rBTec.isSelected()){
+                nivel_ac = rBTec.getText();
+            }else if(rBPro.isSelected()){
+                nivel_ac = rBPro.getText();
+            }
+           
+            
             String fecha_nac = tf_fechaNac.getText();
 
-            String sqlString = "insert into registro_profesores"
-                    + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, OCUPACIÓN, NIVEL_AC, FECHA_NAC)"
+            String sqlString = "insert into registro_docentes"
+                    + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, ÁREA_AC, NIVEL_AC, FECHA_NAC)"
                     + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + areaacademica + "', '" + nivel_ac +"','"+fecha_nac+"')";
 
             st.executeUpdate(sqlString); 
@@ -125,13 +149,13 @@ public class FXMLregistroProfesoresController implements Initializable {
             System.err.println(sqle);
         }
         
-        tf_nombres.setText("");
+        /* tf_nombres.setText("");
         tf_apellidos.setText("");
         tf_id.setText("");
         tf_edad.setText("");
         tf_genero.setText("");
         tf_areaacademica.setText("");
-        labelSeleccion.setText("");
+        labelSeleccion.setText(""); */
     }
 
     @FXML

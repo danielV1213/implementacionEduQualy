@@ -62,13 +62,13 @@
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
             </Label>
-            <RadioButton fx:id="rBPrimaria" layoutX="170.0" layoutY="511.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Primaria">
+            <RadioButton fx:id="rBPrimaria" layoutX="170.0" layoutY="503.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Primaria">
                <toggleGroup>
                   <ToggleGroup fx:id="nivel_ac" />
                </toggleGroup></RadioButton>
-            <RadioButton fx:id="rBSecundaria" layoutX="328.0" layoutY="511.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Secundaria" toggleGroup="$nivel_ac" />
-            <RadioButton fx:id="rBTec" layoutX="170.0" layoutY="538.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Técnico/Tecnológico" toggleGroup="$nivel_ac" />
-            <RadioButton fx:id="rBPro" layoutX="328.0" layoutY="538.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Profesional" toggleGroup="$nivel_ac" />
+            <RadioButton fx:id="rBSecundaria" layoutX="328.0" layoutY="503.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Secundaria" toggleGroup="$nivel_ac" />
+            <RadioButton fx:id="rBTec" layoutX="170.0" layoutY="530.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Técnico/Tecnológico" toggleGroup="$nivel_ac" />
+            <RadioButton fx:id="rBPro" layoutX="328.0" layoutY="530.0" mnemonicParsing="false" onAction="#esSeleccionado" text="Profesional" toggleGroup="$nivel_ac" />
             <Button fx:id="btnRegresar" layoutX="27.0" layoutY="582.0" mnemonicParsing="false" onAction="#opmRegresar" prefHeight="35.0" prefWidth="111.0" text="Regresar">
                <font>
                   <Font name="Dosis SemiBold" size="16.0" />
@@ -78,17 +78,17 @@
                   <Font name="Dosis SemiBold" size="16.0" />
                </font>
             </Button>
-            <Label fx:id="labelSeleccion" disable="true" layoutX="223.0" layoutY="581.0" prefHeight="25.0" prefWidth="149.0" textAlignment="CENTER">
-               <font>
-                  <Font name="Dosis SemiBold" size="12.0" />
-               </font>
-            </Label>
             <TextField fx:id="tf_fechaNac" layoutX="228.0" layoutY="416.0" prefHeight="25.0" prefWidth="180.0" promptText="'AAAA-MM-DD'" />
             <Label layoutX="69.0" layoutY="416.0" text="Fecha de nacimiento">
                <font>
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
             </Label>
+            <Button fx:id="btnLimpiar" layoutX="246.0" layoutY="582.0" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="35.0" prefWidth="111.0" text="Limpiar">
+               <font>
+                  <Font name="Dosis SemiBold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
