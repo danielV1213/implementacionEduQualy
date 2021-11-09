@@ -45,6 +45,8 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Button btnRegistroEstudiante;
+    @FXML
+    private Button btnRegistroProfesor;
     
     @FXML
     private void ingresarEstudiante(ActionEvent event) {
@@ -84,7 +86,25 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void registrarDocente(ActionEvent event) {
-        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/FXMLregistroProfesores.fxml"));
+            Parent root = loader.load();
+            
+            FXMLregistroProfesoresController controlador = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            
+            stage.setScene(scene);
+            stage.show();
+            
+            stage.setOnCloseRequest(e -> controlador.closeWindows());
+            
+            Stage myStage = (Stage) this.btnRegistroProfesor.getScene().getWindow();
+            myStage.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML
