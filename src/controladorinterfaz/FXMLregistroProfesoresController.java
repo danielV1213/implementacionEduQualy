@@ -74,6 +74,9 @@ public class FXMLregistroProfesoresController implements Initializable {
 
     @FXML
     private Label labelSeleccion;
+    
+    private FXMLDocumentController fxmlDocumentController;
+    private Stage stage;
 
     @FXML
     private void esSeleccionado(ActionEvent event) {
@@ -105,7 +108,7 @@ public class FXMLregistroProfesoresController implements Initializable {
 
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "root1242";
+        String pwd = "serperior27";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -191,6 +194,11 @@ public class FXMLregistroProfesoresController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    void init(Stage stage, FXMLDocumentController aThis) {
+        this.fxmlDocumentController = aThis;
+        this.stage = stage;
     }
 
 }
