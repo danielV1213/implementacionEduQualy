@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladorinterfaz.FXMLmenuEstudianteController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="733.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLmenuEstudianteController">
+   <children>
+      <Label layoutX="231.0" text="Sección de estudiantes">
+         <font>
+            <Font name="Dosis SemiBold" size="30.0" />
+         </font>
+      </Label>
+      <TableView layoutX="23.0" layoutY="109.0" prefHeight="200.0" prefWidth="445.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="167.0" layoutY="66.0" prefHeight="32.0" prefWidth="157.0" text="Cursos disponibles" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <TableView layoutX="23.0" layoutY="375.0" prefHeight="200.0" prefWidth="445.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+      </TableView>
+      <Label layoutX="167.0" layoutY="328.0" prefHeight="32.0" prefWidth="172.0" text="Cursos matriculados" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="529.0" layoutY="106.0" prefHeight="32.0" prefWidth="157.0" text="Zona de matrícula" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="497.0" layoutY="149.0" prefHeight="64.0" prefWidth="220.0" text="Ingresa el ID del curso que desees matricular." textAlignment="JUSTIFY" wrapText="true">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_IDCurso" layoutX="533.0" layoutY="237.0" />
+      <Button layoutX="564.0" layoutY="287.0" mnemonicParsing="false" onAction="#matricularCurso" text="Matricular">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="553.0" layoutY="343.0" mnemonicParsing="false" onAction="#matricularCurso" text="Ver matrícula">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

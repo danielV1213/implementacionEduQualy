@@ -74,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
 
             if (Con.resultado.next()) {
 
-                JOptionPane.showMessageDialog(null, "Correcto");
+                JOptionPane.showMessageDialog(null, "Acceso concedido.");
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/FXMLmenuEstudiante.fxml"));
                 Parent root = loader.load();
                 FXMLmenuEstudianteController controlador = loader.getController();
@@ -123,7 +123,7 @@ public class FXMLDocumentController implements Initializable {
 
             if (Con.resultado.next()) {
 
-                JOptionPane.showMessageDialog(null, "Correcto");
+                JOptionPane.showMessageDialog(null, "Acceso concedido.");
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/FXMLmenuProfesor.fxml"));
                 Parent root = loader.load();
                 FXMLmenuProfesorController controlador = loader.getController();

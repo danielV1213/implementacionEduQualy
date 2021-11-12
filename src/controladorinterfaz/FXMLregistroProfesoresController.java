@@ -108,7 +108,7 @@ public class FXMLregistroProfesoresController implements Initializable {
 
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "serperior27";
+        String pwd = "root1242";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

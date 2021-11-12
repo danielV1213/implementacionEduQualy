@@ -110,14 +110,13 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "serperior27";
+        String pwd = "root1242";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String srcURL = "jdbc:mysql:///" + nameDB;
             Connection databaConnection = DriverManager.getConnection(srcURL, user, pwd);
 
-            //JOptionPane.showMessageDialog(null, "Conexión con " + nameDB + " restablecida");
             JOptionPane.showMessageDialog(null, "¡Te has registrado con éxito en EduQualy!");
 
             Statement st = databaConnection.createStatement();
