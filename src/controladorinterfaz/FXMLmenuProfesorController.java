@@ -7,6 +7,7 @@ package controladorinterfaz;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -32,6 +33,9 @@ public class FXMLmenuProfesorController implements Initializable {
 
     @FXML
     private TextField tf_IDprofesor;
+    
+    @FXML
+    private Button btnActualizar;
 
     @FXML
     private Button btnCrearCurso;
@@ -48,6 +52,21 @@ public class FXMLmenuProfesorController implements Initializable {
     private FXMLDocumentController fxmlDocumentController;
     private Stage stage;
     
+    @FXML
+    private void limpiarCampos(ActionEvent event) {
+
+        tf_nombreCurso.setText("");
+        tf_duracion.setText("");
+        tf_modalidad.setText("");
+        tf_IDprofesor.setText("");
+    
+    }
+    
+    @FXML
+    private void opmRegresar(ActionEvent event) {
+        Stage stage = (Stage) this.btnRegresar.getScene().getWindow();
+        stage.close();
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

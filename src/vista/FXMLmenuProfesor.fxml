@@ -8,30 +8,30 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="793.0" prefWidth="958.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLmenuProfesorController">
+<AnchorPane id="AnchorPane" prefHeight="827.0" prefWidth="958.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLmenuProfesorController">
    <children>
       <Label layoutX="334.0" layoutY="14.0" text="Sección de profesores">
          <font>
             <Font name="Dosis SemiBold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="141.0" layoutY="441.0" prefHeight="32.0" prefWidth="231.0" text="Estudiantes matriculados" textAlignment="CENTER">
+      <Label layoutX="141.0" layoutY="411.0" prefHeight="32.0" prefWidth="231.0" text="Estudiantes matriculados" textAlignment="CENTER">
          <font>
             <Font name="Dosis SemiBold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="178.0" layoutY="181.0" prefHeight="32.0" prefWidth="157.0" text="Cursos creados" textAlignment="CENTER">
+      <Label layoutX="178.0" layoutY="151.0" prefHeight="32.0" prefWidth="157.0" text="Cursos creados" textAlignment="CENTER">
          <font>
             <Font name="Dosis SemiBold" size="20.0" />
          </font>
       </Label>
-      <TableView layoutX="34.0" layoutY="490.0" prefHeight="265.0" prefWidth="445.0">
+      <TableView fx:id="tableEstudiantesMat" layoutX="34.0" layoutY="460.0" prefHeight="265.0" prefWidth="445.0">
          <columns>
             <TableColumn prefWidth="75.0" text="C1" />
             <TableColumn prefWidth="75.0" text="C2" />
          </columns>
       </TableView>
-      <TableView layoutX="34.0" layoutY="224.0" prefHeight="200.0" prefWidth="445.0">
+      <TableView fx:id="tableCursosCreados" layoutX="34.0" layoutY="194.0" prefHeight="200.0" prefWidth="445.0">
          <columns>
             <TableColumn prefWidth="75.0" text="C1" />
             <TableColumn prefWidth="75.0" text="C2" />
@@ -66,7 +66,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="625.0" layoutY="95.0" text="Creación de cursos">
+      <Label layoutX="630.0" layoutY="95.0" text="Creación de cursos">
          <font>
             <Font size="25.0" />
          </font>
@@ -77,6 +77,11 @@
          </font>
       </Button>
       <Button fx:id="btnRegresar" layoutX="701.0" layoutY="718.0" mnemonicParsing="false" onAction="#matricularCurso" text="Regresar">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnActualizar" layoutX="188.0" layoutY="755.0" mnemonicParsing="false" onAction="#actualizarTablas" text="Actualizar tablas">
          <font>
             <Font name="Dosis SemiBold" size="16.0" />
          </font>
