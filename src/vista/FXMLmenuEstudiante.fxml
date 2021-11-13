@@ -8,10 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="733.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLmenuEstudianteController">
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladorinterfaz.FXMLmenuEstudianteController">
    <children>
-      <Label layoutX="231.0" text="Sección de estudiantes">
+      <Label layoutX="215.0" text="Sección de estudiantes">
          <font>
             <Font name="Dosis SemiBold" size="30.0" />
          </font>
