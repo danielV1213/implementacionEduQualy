@@ -52,10 +52,13 @@ public class FXMLregistroProfesoresController implements Initializable {
     private TextField tf_genero;
 
     @FXML
-    private TextField tf_areaacademica;
+    private TextField tf_areaAc;
     
     @FXML
     private TextField tf_fechaNac;
+    
+    @FXML
+    private TextField tf_aniosExp;
 
     @FXML
     private Button btnRegresar;
@@ -81,26 +84,18 @@ public class FXMLregistroProfesoresController implements Initializable {
     @FXML
     private void esSeleccionado(ActionEvent event) {
         
-        /*if (rBPrimaria.isSelected()) {
-            labelSeleccion.setText(rBPrimaria.getText());
-        } else if (rBSecundaria.isSelected()) {
-            labelSeleccion.setText(rBSecundaria.getText());
-        } else if (rBTec.isSelected()) {
-            labelSeleccion.setText(rBTec.getText());
-        } else if (rBPro.isSelected()) {
-            labelSeleccion.setText(rBPro.getText());
-        }*/
     }
     
     @FXML
-    private void limpiarEstudiantes(ActionEvent event) {
+    private void limpiarProfesores(ActionEvent event) {
         tf_nombres.setText("");
         tf_apellidos.setText("");
         tf_id.setText("");
         tf_edad.setText("");
         tf_genero.setText("");
-        tf_areaacademica.setText("");
+        tf_areaAc.setText("");
         tf_fechaNac.setText("");
+        tf_aniosExp.setText("");
     }
 
     @FXML
@@ -115,8 +110,7 @@ public class FXMLregistroProfesoresController implements Initializable {
             String srcURL = "jdbc:mysql:///" + nameDB;
             Connection databaConnection = DriverManager.getConnection(srcURL, user, pwd);
 
-            //JOptionPane.showMessageDialog(null, "Conexión con " + nameDB + " restablecida");
-            JOptionPane.showMessageDialog(null, "¡Te has registrado con éxito en EduQualy!");
+            JOptionPane.showMessageDialog(null, "Conexión establecida con la base de datos de EduQualy", "Conexión", JOptionPane.INFORMATION_MESSAGE);
 
             Statement st = databaConnection.createStatement();
 
@@ -125,40 +119,25 @@ public class FXMLregistroProfesoresController implements Initializable {
             int num_id = Integer.parseInt(tf_id.getText());
             int edad = Integer.parseInt(tf_edad.getText());
             String gen = tf_genero.getText();
-            String areaacademica = tf_areaacademica.getText();
-            String nivel_ac = "";
-            
-            if(rBPrimaria.isSelected()){
-                nivel_ac = rBPrimaria.getText();
-            }else if(rBSecundaria.isSelected()){
-                nivel_ac = rBSecundaria.getText();
-            }else if(rBTec.isSelected()){
-                nivel_ac = rBTec.getText();
-            }else if(rBPro.isSelected()){
-                nivel_ac = rBPro.getText();
-            }
-           
-            
+            String areaAc = tf_areaAc.getText();     
             String fecha_nac = tf_fechaNac.getText();
+            String anios_exp = tf_aniosExp.getText();
 
-            String sqlString = "insert into registro_docentes"
-                    + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, ÁREA_AC, NIVEL_AC, FECHA_NAC)"
-                    + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + areaacademica + "', '" + nivel_ac +"','"+fecha_nac+"')";
+            String sqlString = "insert into docentes"
+                    + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, ÁREA_AC, FECHA_NAC, AÑOS_EXP)"
+                    + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + areaAc + "','" + fecha_nac +"', '"+ anios_exp +"')";
 
             st.executeUpdate(sqlString); 
+            
+            JOptionPane.showMessageDialog(null, "¡Te has registrado con éxito en EduQualy!", "Registro", JOptionPane.INFORMATION_MESSAGE);
+            
         } catch (ClassNotFoundException evt) {
             System.err.println(evt);
+            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR);
         } catch (SQLException sqle) {
             System.err.println(sqle);
+            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR);
         }
-        
-        /* tf_nombres.setText("");
-        tf_apellidos.setText("");
-        tf_id.setText("");
-        tf_edad.setText("");
-        tf_genero.setText("");
-        tf_areaacademica.setText("");
-        labelSeleccion.setText(""); */
     }
 
     @FXML

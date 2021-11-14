@@ -11,9 +11,9 @@
    <children>
       <AnchorPane id="AnchorPane" layoutX="5.0" prefHeight="632.0" prefWidth="600.0">
          <children>
-            <Label layoutX="189.0" layoutY="31.0" text="REGISTRO PARA ESTUDIANTES">
+            <Label layoutX="134.0" layoutY="26.0" text="REGISTRO PARA ESTUDIANTES">
                <font>
-                  <Font name="Dosis SemiBold" size="18.0" />
+                  <Font name="Dosis SemiBold" size="30.0" />
                </font>
             </Label>
             <Label layoutX="147.0" layoutY="160.0" text="Nombres">
@@ -84,7 +84,7 @@
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnLimpiar" layoutX="246.0" layoutY="582.0" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="35.0" prefWidth="111.0" text="Limpiar">
+            <Button fx:id="btnLimpiar" layoutX="263.0" layoutY="582.0" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="35.0" prefWidth="111.0" text="Limpiar">
                <font>
                   <Font name="Dosis SemiBold" size="16.0" />
                </font>

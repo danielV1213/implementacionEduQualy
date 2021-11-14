@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author Daniel
  */
-public class Profesor extends Persona{
+public class Profesor{
     
     int anios_experiencia;
     ArrayList<Curso>cursos_dictados;
@@ -22,7 +22,6 @@ public class Profesor extends Persona{
     }
 
     public Profesor(int anios_experiencia, ArrayList<Curso> cursos_dictados, String area_academica, String nombre, String apellido, String genero, String nivel_academico, String password, int id, int edad, Date fecha_nacimiento) {
-        super(nombre, apellido, genero, nivel_academico, password, id, edad, fecha_nacimiento);
         this.anios_experiencia = anios_experiencia;
         this.cursos_dictados = cursos_dictados;
         this.area_academica = area_academica;
@@ -54,7 +53,7 @@ public class Profesor extends Persona{
 
     @Override
     public String toString() {
-        return super.toString() + "Profesor{" + "anios_experiencia=" + anios_experiencia + ", cursos_dictados=" + cursos_dictados + ", area_academica=" + area_academica + '}';
+        return "Profesor{" + "anios_experiencia=" + anios_experiencia + ", cursos_dictados=" + cursos_dictados + ", area_academica=" + area_academica + '}';
     }
     
 }

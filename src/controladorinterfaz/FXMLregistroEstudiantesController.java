@@ -80,16 +80,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
     @FXML
     private void esSeleccionado(ActionEvent event) {
-        /*
-        if (rBPrimaria.isSelected()) {
-            labelSeleccion.setText(rBPrimaria.getText());
-        } else if (rBSecundaria.isSelected()) {
-            labelSeleccion.setText(rBSecundaria.getText());
-        } else if (rBTec.isSelected()) {
-            labelSeleccion.setText(rBTec.getText());
-        } else if (rBPro.isSelected()) {
-            labelSeleccion.setText(rBPro.getText());
-        }*/
+        
     }
 
     @FXML
@@ -117,7 +108,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
             String srcURL = "jdbc:mysql:///" + nameDB;
             Connection databaConnection = DriverManager.getConnection(srcURL, user, pwd);
 
-            JOptionPane.showMessageDialog(null, "¡Te has registrado con éxito en EduQualy!");
+            JOptionPane.showMessageDialog(null, "Conexión establecida con la base de datos de EduQualy", "Conexión", JOptionPane.INFORMATION_MESSAGE);
 
             Statement st = databaConnection.createStatement();
 
@@ -141,15 +132,20 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
             String fecha_nac = tf_fechaNac.getText();
 
-            String sqlString = "insert into registro_estudiantes"
+            String sqlString = "insert into estudiantes"
                     + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, OCUPACIÓN, NIVEL_AC, FECHA_NAC)"
                     + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + ocupacion + "', '" + nivel_ac + "','" + fecha_nac + "')";
 
             st.executeUpdate(sqlString);
+
+            JOptionPane.showMessageDialog(null, "¡Te has registrado con éxito en EduQualy!", "Registro", JOptionPane.INFORMATION_MESSAGE);
+
         } catch (ClassNotFoundException evt) {
             System.err.println(evt);
+            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR);
         } catch (SQLException sqle) {
             System.err.println(sqle);
+            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR);
         }
     }
 

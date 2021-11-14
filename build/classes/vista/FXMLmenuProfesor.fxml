@@ -7,76 +7,101 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="793.0" prefWidth="958.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLmenuProfesorController">
+<AnchorPane id="AnchorPane" prefHeight="686.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladorinterfaz.FXMLmenuProfesorController">
    <children>
-      <Label layoutX="334.0" layoutY="14.0" text="Sección de profesores">
+      <Label layoutX="389.0" text="Sección de docentes">
          <font>
             <Font name="Dosis SemiBold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="141.0" layoutY="441.0" prefHeight="32.0" prefWidth="231.0" text="Estudiantes matriculados" textAlignment="CENTER">
+      <Label layoutX="238.0" layoutY="356.0" prefHeight="32.0" prefWidth="209.0" text="Estudiantes matriculados" textAlignment="CENTER">
          <font>
             <Font name="Dosis SemiBold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="178.0" layoutY="181.0" prefHeight="32.0" prefWidth="157.0" text="Cursos creados" textAlignment="CENTER">
+      <Label layoutX="275.0" layoutY="100.0" prefHeight="32.0" prefWidth="135.0" text="Cursos creados" textAlignment="CENTER">
          <font>
             <Font name="Dosis SemiBold" size="20.0" />
          </font>
       </Label>
-      <TableView layoutX="34.0" layoutY="490.0" prefHeight="265.0" prefWidth="445.0">
+      <TableView fx:id="tableEstudiantesMat" layoutX="14.0" layoutY="407.0" prefHeight="265.0" prefWidth="628.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="TC_Nest" text="NOMBRES" />
+            <TableColumn fx:id="TC_APest" prefWidth="70.0" text="APELLIDOS" />
+            <TableColumn fx:id="TC_IDest" prefWidth="44.0" text="ID" />
+            <TableColumn fx:id="TC_EDADest" prefWidth="50.0" text="EDAD" />
+            <TableColumn fx:id="TC_GENest" prefWidth="62.0" text="GÉNERO" />
+            <TableColumn fx:id="TC_OCest" prefWidth="79.0" text="OCUPACIÓN" />
+            <TableColumn fx:id="TC_NIVACest" prefWidth="66.0" text="NIVEL_AC" />
+            <TableColumn fx:id="TC_FECHAest" prefWidth="79.0" text="FECHA_NAC" />
+            <TableColumn fx:id="TC_CODCURest" prefWidth="97.0" text="CÓDIGO_CURSO" />
          </columns>
       </TableView>
-      <TableView layoutX="34.0" layoutY="224.0" prefHeight="200.0" prefWidth="445.0">
+      <TableView fx:id="tableCursosCreados" layoutX="14.0" layoutY="141.0" prefHeight="200.0" prefWidth="628.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="TC_Nombre" prefWidth="235.0" text="NOMBRE" />
+            <TableColumn fx:id="TC_Code" prefWidth="76.0" text="CÓDIGO" />
+            <TableColumn fx:id="TC_DuraH" prefWidth="90.0" text="DURACIÓN_H" />
+            <TableColumn fx:id="TC_Modal" prefWidth="122.0" text="MODALIDAD" />
+            <TableColumn fx:id="TC_ID_Docente" prefWidth="104.0" text="ID_DOCENTE" />
          </columns>
       </TableView>
-      <TextField fx:id="tf_nombreCurso" layoutX="641.0" layoutY="220.0" />
-      <Label layoutX="656.0" layoutY="181.0" prefHeight="32.0" prefWidth="157.0" text="Nombre de curso" textAlignment="CENTER">
+      <TextField fx:id="tf_nombreCurso" layoutX="731.0" layoutY="142.0" />
+      <Label layoutX="749.0" layoutY="100.0" prefHeight="32.0" prefWidth="115.0" text="Nombre de curso" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="732.0" layoutY="180.0" prefHeight="32.0" prefWidth="149.0" text="Duración total (horas)" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_duracion" layoutX="731.0" layoutY="221.0" />
+      <TextField fx:id="tf_modalidad" layoutX="731.0" layoutY="305.0" />
+      <Label layoutX="738.0" layoutY="260.0" prefHeight="32.0" prefWidth="135.0" text="Modalidad del curso" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="763.0" layoutY="413.0" prefHeight="32.0" prefWidth="96.0" text="ID del profesor" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_IDprofesor" layoutX="733.0" layoutY="454.0" />
+      <Label layoutX="267.0" layoutY="61.0" text="Consulta de cursos">
          <font>
             <Font name="Dosis SemiBold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="641.0" layoutY="274.0" prefHeight="32.0" prefWidth="204.0" text="Duración total (horas)" textAlignment="CENTER">
+      <Label layoutX="732.0" layoutY="61.0" text="Creación de cursos">
          <font>
             <Font name="Dosis SemiBold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_duracion" layoutX="641.0" layoutY="313.0" />
-      <TextField fx:id="tf_modalidad" layoutX="641.0" layoutY="407.0" />
-      <Label layoutX="641.0" layoutY="368.0" prefHeight="32.0" prefWidth="204.0" text="Modalidad del curso" textAlignment="CENTER">
-         <font>
-            <Font name="Dosis SemiBold" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="666.0" layoutY="463.0" prefHeight="32.0" prefWidth="204.0" text="ID del profesor" textAlignment="CENTER">
-         <font>
-            <Font name="Dosis SemiBold" size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tf_IDprofesor" layoutX="641.0" layoutY="501.0" />
-      <Label layoutX="152.0" layoutY="95.0" text="Consulta de cursos">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="625.0" layoutY="95.0" text="Creación de cursos">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnCrearCurso" layoutX="692.0" layoutY="572.0" mnemonicParsing="false" onAction="#matricularCurso" text="Crear curso">
+      <Button fx:id="btnCrearCurso" layoutX="764.0" layoutY="523.0" mnemonicParsing="false" onAction="#crearCurso" text="Crear curso">
          <font>
             <Font name="Dosis SemiBold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnRegresar" layoutX="701.0" layoutY="718.0" mnemonicParsing="false" onAction="#matricularCurso" text="Regresar">
+      <Button fx:id="btnRegresar" layoutX="772.0" layoutY="606.0" mnemonicParsing="false" onAction="#regresarProf" text="Regresar">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnActualizarCur" layoutX="556.0" layoutY="107.0" mnemonicParsing="false" onAction="#actualizarTablaCursos" prefHeight="32.0" prefWidth="86.0" text="Actualizar">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tf_CodeCurso" layoutX="733.0" layoutY="376.0" />
+      <Label layoutX="764.0" layoutY="340.0" prefHeight="32.0" prefWidth="86.0" text="Código curso" textAlignment="CENTER">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnActualizarEst" layoutX="556.0" layoutY="373.0" mnemonicParsing="false" onAction="#actualizarTablaEst" prefHeight="32.0" prefWidth="86.0" text="Actualizar">
          <font>
             <Font name="Dosis SemiBold" size="16.0" />
          </font>

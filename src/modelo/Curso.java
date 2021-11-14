@@ -5,27 +5,34 @@
  */
 package modelo;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author Daniel
  */
 public class Curso {
-    String nombre, docente_asociado, modalidad;
+
+    String nombre, modalidad;
     int codigo, duracion_horas;
-    ArrayList<Estudiante> estudiantes_matriculados;
+    int id_docente;
 
     public Curso() {
     }
 
-    public Curso(String nombre, String docente_asociado, String modalidad, int codigo, int duracion_horas, ArrayList<Estudiante> estudiantes_matriculados) {
+    public Curso(String nombre, int codigo, int duracion_horas, String modalidad, int id_docente) {
         this.nombre = nombre;
-        this.docente_asociado = docente_asociado;
         this.modalidad = modalidad;
         this.codigo = codigo;
         this.duracion_horas = duracion_horas;
-        this.estudiantes_matriculados = estudiantes_matriculados;
+        this.id_docente = id_docente;
     }
 
     public String getNombre() {
@@ -34,14 +41,6 @@ public class Curso {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getDocente_asociado() {
-        return docente_asociado;
-    }
-
-    public void setDocente_asociado(String docente_asociado) {
-        this.docente_asociado = docente_asociado;
     }
 
     public String getModalidad() {
@@ -68,16 +67,43 @@ public class Curso {
         this.duracion_horas = duracion_horas;
     }
 
-    public ArrayList<Estudiante> getEstudiantes_matriculados() {
-        return estudiantes_matriculados;
+    public int getId_docente() {
+        return id_docente;
     }
 
-    public void setEstudiantes_matriculados(ArrayList<Estudiante> estudiantes_matriculados) {
-        this.estudiantes_matriculados = estudiantes_matriculados;
+    public void setId_docente(int id_docente) {
+        this.id_docente = id_docente;
     }
 
     @Override
     public String toString() {
-        return "Curso{" + "nombre=" + nombre + ", docente_asociado=" + docente_asociado + ", modalidad=" + modalidad + ", codigo=" + codigo + ", duracion_horas=" + duracion_horas + ", estudiantes_matriculados=" + estudiantes_matriculados + '}';
+        return "Curso{" + "nombre=" + nombre + ", modalidad=" + modalidad + ", codigo=" + codigo + ", duracion_horas=" + duracion_horas + ", id_docente=" + id_docente + '}';
     }
+
+    public static void llenarInfoCursosP(Connection conexion,
+            ObservableList<Curso> lista) {
+        try {
+            Statement instruccion = conexion.createStatement();
+            ResultSet resultado = instruccion.executeQuery(
+                    "SELECT NOMBRE, "
+                    + "CÓDIGO, "
+                    + "DURACIÓN_H, "
+                    + "MODALIDAD, "
+                    + "ID_DOCENTE, "
+                    + "FROM cursos"
+            );
+            while (resultado.next()) {
+                lista.add(
+                        new Curso(resultado.getString("NOMBRE"),
+                                resultado.getInt("CÓDIGO"),
+                                resultado.getInt("DURACIÓN_H"),
+                                resultado.getString("MODALIDAD"),
+                                resultado.getInt("ID_DOCENTE"))
+                );
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LlenadoDeTablas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

@@ -68,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
 
             Con.ConectarBasedeDatos();
 
-            String SQL = "SELECT ID, OCUPACIÓN FROM registro_estudiantes WHERE ID='" + id + "' AND OCUPACIÓN ='" + oc + "'";
+            String SQL = "select ID, OCUPACIÓN from estudiantes where ID='" + id + "' and OCUPACIÓN ='" + oc + "'";
 
             Con.resultado = Con.sentencia.executeQuery(SQL);
 
@@ -86,10 +86,10 @@ public class FXMLDocumentController implements Initializable {
                 //Stage stage = (Stage) this.btnRegresar.getScene().getWindow();
                 //this.stage.close();
             } else {
-                JOptionPane.showMessageDialog(null, "Credenciales inválidas");
+                JOptionPane.showMessageDialog(null, "Credenciales inválidas.");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Credenciales inválidas.");
         }
 
         System.out.println("Ingresar");
@@ -117,7 +117,7 @@ public class FXMLDocumentController implements Initializable {
 
             Con.ConectarBasedeDatos();
 
-            String SQL = "SELECT ID, ÁREA_AC FROM registro_docentes WHERE ID='" + u + "' AND ÁREA_AC ='" + p + "'";
+            String SQL = "select ID, ÁREA_AC from docentes where ID='" + u + "' and ÁREA_AC ='" + p + "'";
 
             Con.resultado = Con.sentencia.executeQuery(SQL);
 
@@ -135,10 +135,11 @@ public class FXMLDocumentController implements Initializable {
                 //Stage stage = (Stage) this.btnRegresar.getScene().getWindow();
                 //this.stage.close();
             } else {
-                JOptionPane.showMessageDialog(null, "Credenciales inválidas");
+                JOptionPane.showMessageDialog(null, "Credenciales inválidas.");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            //JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Credenciales inválidas.");
         }
 
     }

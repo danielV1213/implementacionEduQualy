@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladorinterfaz.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladorinterfaz.FXMLDocumentController">
     <children>
         <Button layoutX="80.0" layoutY="366.0" onAction="#ingresarEstudiante" text="Ingresar" textAlignment="CENTER">
          <font>
@@ -67,12 +67,12 @@
             <Font name="Dosis SemiBold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="245.0" layoutY="99.0" onAction="#conectarBD" text="Conectar a Base de Datos" textAlignment="CENTER">
+      <Button layoutX="253.0" layoutY="102.0" onAction="#conectarBD" text="Actualizar información" textAlignment="CENTER">
          <font>
             <Font name="Dosis SemiBold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="583.0" layoutY="529.0" onAction="#salirVentana1" text="Salir" textAlignment="CENTER">
+      <Button layoutX="586.0" layoutY="454.0" onAction="#salirVentana1" text="Salir" textAlignment="CENTER">
          <font>
             <Font name="Dosis SemiBold" size="16.0" />
          </font>

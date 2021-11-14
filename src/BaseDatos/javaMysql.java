@@ -14,16 +14,34 @@ import javax.swing.JOptionPane;
  */
 public class javaMysql {
 
-    Connection conectar = null;
+    
+    private Connection connection;
+    
+    public static Connection getConnection() throws SQLException{
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "root1242");
+        return connection;
+    }
 
+    public void setConnection(Connection connection){
+        this.connection = connection;
+    }
+    
     public Connection conectar() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "root1242");
-            JOptionPane.showMessageDialog(null, "Conexión exitosa ", "Conexión", JOptionPane.INFORMATION_MESSAGE);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "root1242");
+            JOptionPane.showMessageDialog(null, "Información actualizada.", "Actualización", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Conexión fallida " + e, "Conexión", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Conexión con la Base de Datos fallida." + e, "Actualización fallida", JOptionPane.ERROR_MESSAGE);
         } 
-        return conectar;
+        return connection;
+    }
+    
+    public void cerrarConexion(){
+        try{
+            connection.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 }
