@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="418.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladorinterfaz.FXMLcertificarEstudianteController">
+   <children>
+      <Label layoutX="179.0" layoutY="23.0" text="Sección de Certificados">
+         <font>
+            <Font name="Dosis SemiBold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="77.0" text="Número de Identificación del Estudiante">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_idCertificado" layoutX="208.0" layoutY="121.0" prefHeight="25.0" prefWidth="218.0" />
+      <Label layoutX="174.0" layoutY="173.0" text="Código del curso del cual se certifica">
+         <font>
+            <Font name="Dosis SemiBold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_codCertificado" layoutX="208.0" layoutY="214.0" prefHeight="25.0" prefWidth="218.0" />
+      <Button layoutX="270.0" layoutY="271.0" mnemonicParsing="false" onAction="#certificar" text="Certificar">
+         <font>
+            <Font name="Dosis SemiBold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

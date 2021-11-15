@@ -38,6 +38,9 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
     @FXML
     private TextField tf_nombres;
+    
+     @FXML
+    private TextField tf_tipoid;
 
     @FXML
     private TextField tf_apellidos;
@@ -101,7 +104,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "root1242";
+        String pwd = "serperior27";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -119,6 +122,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
             String gen = tf_genero.getText();
             String ocupacion = tf_ocupacion.getText();
             String nivel_ac = "";
+            String tipoId = tf_tipoid.getText();
 
             if (rBPrimaria.isSelected()) {
                 nivel_ac = rBPrimaria.getText();
@@ -135,17 +139,20 @@ public class FXMLregistroEstudiantesController implements Initializable {
             String sqlString = "insert into estudiantes"
                     + "(NOMBRES, APELLIDOS, ID, EDAD, GÉNERO, OCUPACIÓN, NIVEL_AC, FECHA_NAC)"
                     + " values('" + nombres + "', '" + apellidos + "', '" + num_id + "', '" + edad + "', '" + gen + "', '" + ocupacion + "', '" + nivel_ac + "','" + fecha_nac + "')";
+            
+            String sqlString2 = "insert into identificaciones" + "(NOM_TID, NÚM_ID_EST)" + " values('" + tipoId + "', '" + num_id + "')";
 
             st.executeUpdate(sqlString);
+            st.executeUpdate(sqlString2);
 
             JOptionPane.showMessageDialog(null, "¡Te has registrado con éxito en EduQualy!", "Registro", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (ClassNotFoundException evt) {
             System.err.println(evt);
-            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR);
+            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR_MESSAGE);
         } catch (SQLException sqle) {
             System.err.println(sqle);
-            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR);
+            JOptionPane.showMessageDialog(null, "Error en el registro, revise los campos", "Registro fallido", JOptionPane.ERROR_MESSAGE);
         }
     }
 

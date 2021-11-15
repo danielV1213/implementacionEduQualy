@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -77,5 +78,10 @@
             <Font name="Dosis SemiBold" size="16.0" />
          </font>
       </Button>
+      <ImageView fitHeight="113.0" fitWidth="129.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/LogoEQ.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

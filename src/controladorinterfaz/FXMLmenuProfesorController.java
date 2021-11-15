@@ -6,6 +6,7 @@
 package controladorinterfaz;
 
 import BaseDatos.javaMysql;
+import java.io.IOException;
 import java.net.ConnectException;
 import java.net.URL;
 import java.sql.Connection;
@@ -20,7 +21,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -137,7 +141,7 @@ public class FXMLmenuProfesorController implements Initializable {
         
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "root1242";
+        String pwd = "serperior27";
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -163,10 +167,10 @@ public class FXMLmenuProfesorController implements Initializable {
             JOptionPane.showMessageDialog(null, "¡Curso creado correctamente!", "Creación de cursos", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClassNotFoundException evt) {
             System.err.println(evt);
-            JOptionPane.showMessageDialog(null, "Error en la creación del curso, revise los campos.", "Creación de cursos", JOptionPane.ERROR);
+            JOptionPane.showMessageDialog(null, "Error en la creación del curso, revise los campos.", "Creación de cursos", JOptionPane.ERROR_MESSAGE);
         } catch (SQLException sqle) {
             System.err.println(sqle);
-            JOptionPane.showMessageDialog(null, "Error en la creación del curso, revise los campos.", "Creación de cursos", JOptionPane.ERROR);
+            JOptionPane.showMessageDialog(null, "Error en la creación del curso, revise los campos.", "Creación de cursos", JOptionPane.ERROR_MESSAGE);
         }
         
     }
@@ -244,6 +248,18 @@ public class FXMLmenuProfesorController implements Initializable {
     @FXML
     private void regresarProf(ActionEvent event) {
         
+    }
+    
+    @FXML
+    private void certificarEstudiante(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/FXMLcertificarEstudiante.fxml"));
+                Parent root = loader.load();
+                FXMLcertificarEstudianteController controlador = loader.getController();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                controlador.init(stage, this);
+                stage.show();
     }
     
     ObservableList<Curso> oblist = FXCollections.observableArrayList();

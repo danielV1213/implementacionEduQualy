@@ -16,12 +16,12 @@
                   <Font name="Dosis SemiBold" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="147.0" layoutY="160.0" text="Nombres">
+            <Label layoutX="147.0" layoutY="125.0" text="Nombres">
                <font>
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="147.0" layoutY="199.0" text="Apellidos">
+            <Label layoutX="147.0" layoutY="164.0" text="Apellidos">
                <font>
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
@@ -51,13 +51,13 @@
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_nombres" layoutX="231.0" layoutY="160.0" prefHeight="25.0" prefWidth="231.0" />
-            <TextField fx:id="tf_apellidos" layoutX="231.0" layoutY="199.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="tf_nombres" layoutX="231.0" layoutY="125.0" prefHeight="25.0" prefWidth="231.0" />
+            <TextField fx:id="tf_apellidos" layoutX="231.0" layoutY="164.0" prefHeight="25.0" prefWidth="231.0" />
             <TextField fx:id="tf_id" layoutX="231.0" layoutY="240.0" prefHeight="25.0" prefWidth="180.0" />
             <TextField fx:id="tf_edad" layoutX="231.0" layoutY="280.0" prefHeight="25.0" prefWidth="58.0" />
             <TextField fx:id="tf_genero" layoutX="231.0" layoutY="322.0" prefHeight="25.0" prefWidth="180.0" />
             <TextField fx:id="tf_ocupacion" layoutX="229.0" layoutY="368.0" prefHeight="25.0" prefWidth="231.0" />
-            <Label layoutX="92.0" layoutY="92.0" text="Llene cada uno de los campos, todos estos son obligatorios.">
+            <Label layoutX="103.0" layoutY="79.0" text="Llene cada uno de los campos, todos estos son obligatorios.">
                <font>
                   <Font name="Dosis SemiBold" size="18.0" />
                </font>
@@ -89,6 +89,12 @@
                   <Font name="Dosis SemiBold" size="16.0" />
                </font>
             </Button>
+            <Label layoutX="62.0" layoutY="203.0" text="Tipo de Identificación">
+               <font>
+                  <Font name="Dosis SemiBold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_tipoid" layoutX="231.0" layoutY="203.0" prefHeight="25.0" prefWidth="231.0" />
          </children>
       </AnchorPane>
    </children>

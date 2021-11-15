@@ -95,7 +95,7 @@ public class FXMLmenuEstudianteController implements Initializable {
         
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "root1242";
+        String pwd = "serperior27";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
