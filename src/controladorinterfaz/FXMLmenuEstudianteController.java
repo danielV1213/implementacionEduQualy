@@ -41,6 +41,9 @@ public class FXMLmenuEstudianteController implements Initializable {
      * Initializes the controller class.
      */ 
     
+    @FXML
+    private Button btnRegresar;
+    
     //Cursos disponibles.
     
     @FXML
@@ -95,7 +98,7 @@ public class FXMLmenuEstudianteController implements Initializable {
         
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "serperior27";
+        String pwd = "root1242";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -164,7 +167,8 @@ public class FXMLmenuEstudianteController implements Initializable {
     
     @FXML
     private void  regresarSeccEst(ActionEvent event) {
-        
+        Stage stage = (Stage) this.btnRegresar.getScene().getWindow();
+        stage.close();
     }
     
     ObservableList<Curso> obListCursosDisp = FXCollections.observableArrayList();

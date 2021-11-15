@@ -91,12 +91,14 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
         tf_nombres.setText("");
         tf_apellidos.setText("");
+        tf_tipoid.setText("");
         tf_id.setText("");
         tf_edad.setText("");
         tf_genero.setText("");
         tf_ocupacion.setText("");
         labelSeleccion.setText("");
-        tf_fechaNac.clear(); //Revisar
+        tf_fechaNac.setText("");
+        
     }
 
     @FXML
@@ -104,7 +106,7 @@ public class FXMLregistroEstudiantesController implements Initializable {
 
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "serperior27";
+        String pwd = "root1242";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

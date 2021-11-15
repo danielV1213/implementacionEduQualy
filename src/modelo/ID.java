@@ -12,9 +12,9 @@ import java.util.Date;
  * @author Daniel
  */
 public class ID {
-    protected String nombres, apellidos, sexo;
-    protected int numId;
-    protected Date fecha_nacimiento, fecha_expedicion;
+    private String nombres, apellidos, sexo;
+    private int numId;
+    private Date fecha_nacimiento, fecha_expedicion;
 
     public ID() {
     }

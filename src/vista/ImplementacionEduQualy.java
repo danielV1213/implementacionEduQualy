@@ -25,6 +25,7 @@ public class ImplementacionEduQualy extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("EduQualy");
     }
 
     /**

@@ -43,6 +43,9 @@ import modelo.Estudiante;
 public class FXMLmenuProfesorController implements Initializable {
     
     @FXML
+    private Button btnRegresar;
+    
+    @FXML
     private TextField tf_nombreCurso;
     
     @FXML
@@ -63,9 +66,6 @@ public class FXMLmenuProfesorController implements Initializable {
     @FXML
     private Button btnCrearCurso;
     
-    @FXML
-    private Button btnRegresar;
-
     //Cursos creados
     @FXML
     private TableView<Curso> tableCursosCreados;
@@ -131,7 +131,7 @@ public class FXMLmenuProfesorController implements Initializable {
     }
     
     @FXML
-    private void opmRegresar(ActionEvent event) {
+    private void regresarProf(ActionEvent event) {
         Stage stage = (Stage) this.btnRegresar.getScene().getWindow();
         stage.close();
     }
@@ -141,7 +141,7 @@ public class FXMLmenuProfesorController implements Initializable {
         
         String nameDB = "eduqualy";
         String user = "root";
-        String pwd = "serperior27";
+        String pwd = "root1242";
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -243,11 +243,6 @@ public class FXMLmenuProfesorController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(FXMLmenuProfesorController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    @FXML
-    private void regresarProf(ActionEvent event) {
-        
     }
     
     @FXML

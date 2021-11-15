@@ -18,7 +18,7 @@ public class javaMysql {
     private Connection connection;
     
     public static Connection getConnection() throws SQLException{
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "serperior27");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "root1242");
         return connection;
     }
 
@@ -29,7 +29,7 @@ public class javaMysql {
     public Connection conectar() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "serperior27");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/eduqualy", "root", "root1242");
             JOptionPane.showMessageDialog(null, "Información actualizada.", "Actualización", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Conexión con la Base de Datos fallida." + e, "Actualización fallida", JOptionPane.ERROR_MESSAGE);
